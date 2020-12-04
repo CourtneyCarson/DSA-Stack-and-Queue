@@ -33,11 +33,20 @@ class Stack {
   //: allows you to check if the stack is empty or not
   isEmpty() {
     if (!this.top) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
   }
+  //to display the stack - what is the 1st item in your stack?
+  display() {
+    let currentNode = this.top;
+    while (currentNode) {
+      console.log(currentNode.data);
+      currentNode = currentNode.next;
+    }
+  }
+  
 }
 
 
@@ -55,13 +64,19 @@ function newFunction() {
   starTrek.push("Spock");
   starTrek.push("McCoy");
   starTrek.push("Scotty");
-  starTrek.peek()
-  
+  starTrek.peek();
+  starTrek.display();
+  // Remove McCoy from your stack and display the stack
+  starTrek.Pop()
+  starTrek.Pop()
+
+  console.log(starTrek.Pop())
+  console.log(starTrek.Pop())
   // console.log(starTrek.peek())
-  console.log(starTrek.isEmpty())
+  // console.log(starTrek.isEmpty());
   // console.log(starTrek);
   // console.log(starTrek.top.next);
-
+  // console.log(starTrek.display())
 }
 newFunction();
 
@@ -72,7 +87,3 @@ newFunction();
 // display(): to display the stack - what is the 1st item in your stack?
 
 
-
-
-
-// };
