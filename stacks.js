@@ -26,11 +26,11 @@ class Stack {
     this.top = node.next;
     return node.data;
   }
-  //allows you to look at the top of the stack without removing it
+  //2.1.a:allows you to look at the top of the stack without removing it
   peek() {
     return this.top.data;
   }
-  //: allows you to check if the stack is empty or not
+  //2.1.b: allows you to check if the stack is empty or not
   isEmpty() {
     if (!this.top) {
       return true;
@@ -38,7 +38,7 @@ class Stack {
       return false;
     }
   }
-  //to display the stack - what is the 1st item in your stack?
+  //2.1.c:to display the stack - what is the 1st item in your stack?
   display() {
     let currentNode = this.top;
     while (currentNode) {
@@ -66,7 +66,7 @@ function newFunction() {
   starTrek.push("Scotty");
   starTrek.peek();
   starTrek.display();
-  // Remove McCoy from your stack and display the stack
+  //2.2: Remove McCoy from your stack and display the stack
   starTrek.Pop()
   starTrek.Pop()
 
@@ -87,3 +87,25 @@ newFunction();
 // display(): to display the stack - what is the 1st item in your stack?
 
 
+// 3. Check for palindromes using a stack
+// A palindrome is a word, phrase, or number that is spelled the same forward and backward.;
+// For example, “dad” is a palindrome; “A man, a plan, a canal: Panama” is a palindrome if 
+// you take out the spaces and ignore the punctuation; and 1, 001 is a numeric palindrome.;
+// We can use a stack to determine whether or not a given string is a palindrome.
+
+// Write an algorithm that uses a stack to determine whether a given input is palindrome or not.;
+// Use the following template as a starting point.;
+
+function is_palindrome(string) {
+  string = string.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+  // Your code goes here
+  let reverseString = string.split('').reverse().join('');
+
+  return reverseString === string; 
+}
+
+// True, true, true, false
+console.log(is_palindrome("dad"));
+console.log(is_palindrome("A man, a plan, a canal: Panama"));
+console.log(is_palindrome("1001"));
+console.log(is_palindrome("Tauhida"));
